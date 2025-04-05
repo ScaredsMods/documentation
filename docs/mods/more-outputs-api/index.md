@@ -71,10 +71,3 @@ I would assume that you already know most of the things we are about to do, but 
 
 
 
-### What we'll need
-
-- A custom [block](../more-outputs-api/block.md).
-- A (custom) [block entity](../more-outputs-api/block-entity/index.md). 
-- A custom [recipe](../more-outputs-api/recipe/index.md) 
-- A [screen(handler)](../more-outputs-api/screen/index.md) for the block entity
-

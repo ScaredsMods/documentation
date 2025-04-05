@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # SubCommandLib
 
 ## Getting started
@@ -6,8 +9,24 @@ Ex: ```/deluxehub reload```
 
 To get started with subcommand lib you need to either do 1 or 2 depending on your build system:
 
-=== "Gradle"
 
+<Tabs>
+    <TabItem value="maven" label="Maven">
+    ```xml
+    <repository>
+        <id>repsy</id>
+        <url>https://repo.repsy.io/mvn/scaredrabbit/scaredsplugins</url>
+    </repository>
+    ```
+    ```xml
+    <dependency>
+        <groupId>io.github.scaredsplugins</groupId>
+        <artifactId>SubCommandLib</artifactId>
+        <version>VERSION</version>
+    </dependency>
+    ```
+  </TabItem>
+  <TabItem value="gradle" label="Gradle" default>
     ```groovy title="In your build.gradle"
     //This should be at the top repository block
     maven {
@@ -26,33 +45,19 @@ To get started with subcommand lib you need to either do 1 or 2 depending on you
     ${project.subcommandlib_version}
     ```
     Is completely optional and is not neccessary at all, just for convenience of easier version swapping.
+  </TabItem>
+  
+  
+</Tabs>
+
+
+
+
     
-
-=== "Maven"
-    ```xml
-    <repository>
-        <id>repsy</id>
-        <url>https://repo.repsy.io/mvn/scaredrabbit/scaredsmods</url>
-    </repository>
-    ```
-    ```xml
-    <dependency>
-        <groupId>io.github.scaredsplugins</groupId>
-        <artifactId>SubCommandLib</artifactId>
-        <version>VERSION</version>
-    </dependency>
-    ```
-```VERSION``` & ```can either be found on [curseforge](https://www.curseforge.com/minecraft/mc-mods/more-outputs-api/files/all?page=1&pageSize=20) or on [repsy](https://repsy.io/mvn/scaredrabbit/scaredsmods/io/github/scaredsmods/moreoutputsapi/MoreOutputsAPI/)
+```VERSION``` can either be found on [SpigotMC](https://www.spigotmc.org/resources/subcommand-lib.116809/) or on [Repsy](https://repo.repsy.io/mvn/scaredrabbit/scaredsplugins/)
 
 
 
-## Adding Subcommands
-
-To do that, we need to do a few things:
-
-- Make a custom [manager](../subcommandlib/manager.md) class
-- Make a class [extending subcommand](../subcommandlib/subcommands.md)
-- [Register](../subcommandlib/registering.md) the command & main command
 
 
 

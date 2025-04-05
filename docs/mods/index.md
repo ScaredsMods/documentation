@@ -2,7 +2,7 @@
 sidebar_position: 2
 --- 
 
-# All available mods
+# Mods
 
 
 ## Standalone mods

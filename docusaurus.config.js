@@ -13,6 +13,7 @@ const config = {
   baseUrl: `/${projectName}/`,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
+  
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -32,13 +33,13 @@ const config = {
     [
       'classic',
       {
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+        docs: false, //{
+          //sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
 
-          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
-        },
+          //editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
+        //},
         blog: {
           showReadingTime: true,
           
@@ -64,12 +65,9 @@ const config = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'mainSideBar',
-          position: 'left',
-          label: 'Documentation',
-        },
+        
+        { to: '/mods/', label: 'Mods', position: 'left' },
+        { to: '/plugins/', label: 'Plugins', position: 'left' },
         {to: '/blog', label: 'Updates', position: 'left'},
         {
           href: `https://github.com/${organizationName}/${projectName}`,
@@ -85,8 +83,12 @@ const config = {
           title: 'Docs',
           items: [
             {
-              label: 'Documentation',
-              to: '/docs/',
+              label: 'Mods',
+              to: '/mods/',
+            },
+            {
+              label: 'Plugins',
+              to: '/plugins/',
             },
           ],
         },
@@ -129,6 +131,29 @@ const config = {
       additionalLanguages: ['java' ,'groovy'],
     },
   },
+  plugins: [
+    
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        path: 'docs/mods',
+        routeBasePath: 'mods',
+        sidebarPath: require.resolve('./sidebarsMods.js'),
+      },
+      
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'plugins',
+        path: 'docs/plugins',
+        routeBasePath: 'plugins',
+        sidebarPath: require.resolve('./sidebarsPlugins.js'),
+      },
+      
+    ],
+  
+  ],
 };
 
 module.exports = config;
